@@ -8,7 +8,8 @@
       "https://localhost:5000/*"
     ],
     "action": {
-      "default_popup": "popup.html"
+      "default_popup": "popup.html",
+      "default_icon": "icon.png" 
     },
 
     "content_security_policy": {
