@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Policy Analysis Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+        }
+
+        #urlInput {
+            width: 200px;
+            padding: 8px;
+            margin-right: 10px;
+        }
+
+        #saveButton {
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #saveButton:hover {
+            background-color: #0056b3;
+        }
+
+        .yes {
+            color: red;
+        }
+
+        .no {
+            color: green;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Policy Analysis Results</h1>
+    <table>
+        <tr>
+            <th>Category</th>
+            <th>Presence</th>
+        </tr>
+        {% for category, presence in results.items() %}
+        <tr>
+            <td>{{ category }}</td>
+            <td class="{% if presence == 'Yes' %}yes{% else %}no{% endif %}">{{ presence }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
